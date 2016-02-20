@@ -17,7 +17,7 @@ import * as serverActions from './redux/reducers/server';
 import ParallaxApp from './components/ParallaxApp';
 import Home from './components/Home';
 import Title from './components/Title';
-import About from './components/About';
+import About from './containers/About';
 
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
