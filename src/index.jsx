@@ -77,7 +77,9 @@ export class App extends Component {
               </LinkContainer>
             </Nav>
           </Navbar>
-          {this.props.children}
+          <div className="container">
+            {this.props.children}
+          </div>
       </div>
     );
   }
