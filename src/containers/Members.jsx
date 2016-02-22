@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = (props) => {
+const Members = (props) => {
   return (
     <div>
-      About
+      Members
     </div>
   );
 };
 
-export default About;
+export default Members;

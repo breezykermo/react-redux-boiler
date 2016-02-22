@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = (props) => {
+const Mission = (props) => {
   return (
     <div>
-      About
+      Mission
     </div>
   );
 };
 
-export default About;
+export default Mission;

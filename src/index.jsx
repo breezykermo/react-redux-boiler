@@ -14,10 +14,16 @@ import { bindActionCreators } from 'redux';
 import * as serverActions from './redux/reducers/server';
 
 //components
-import ParallaxApp from './components/ParallaxApp';
-import Home from './components/Home';
-import Title from './components/Title';
-import About from './containers/About';
+import MissionContainer from './containers/Mission';
+import IntroContainer from './containers/Intro';
+import ReviewContainer from './containers/Review';
+import NextstepContainer from './containers/Nextstep';
+import InitiativesContainer from './containers/Initiatives';
+import ThoughtmapContainer from './containers/Thoughtmap';
+import NecessitiesContainer from './containers/Necessities';
+import PastContainer from './containers/Past';
+import FutureContainer from './containers/Future';
+import MembersContainer from './containers/Members';
 
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
@@ -32,19 +38,40 @@ export class App extends Component {
             <Navbar.Header>
               <Navbar.Brand>
                 <LinkContainer to="/home">
-                  <a href='#'>TO:</a>
+                  <a href='#'>Grind Arts</a>
                 </LinkContainer>
               </Navbar.Brand>
             </Navbar.Header>
             <Nav bsStyle="tabs">
-              <LinkContainer to="title">
-                <NavItem href="#">Title</NavItem>
+              <LinkContainer to="mission">
+                <NavItem href="#">Mission</NavItem>
               </LinkContainer>
-              <LinkContainer to="about">
-                <NavItem href="#">About</NavItem>
+              <LinkContainer to="intro">
+                <NavItem href="#">Intro</NavItem>
               </LinkContainer>
-              <LinkContainer to="/parallax">
-                <NavItem href="#">Parallax</NavItem>
+              <LinkContainer to="review">
+                <NavItem href="#">Review</NavItem>
+              </LinkContainer>
+              <LinkContainer to="nextstep">
+                <NavItem href="#">Next steps</NavItem>
+              </LinkContainer>
+              <LinkContainer to="initiatives">
+                <NavItem href="#">Initiatives</NavItem>
+              </LinkContainer>
+              <LinkContainer to="thoughtmap">
+                <NavItem href="#">Thoughtmap</NavItem>
+              </LinkContainer>
+              <LinkContainer to="necessities">
+                <NavItem href="#">Necessities</NavItem>
+              </LinkContainer>
+              <LinkContainer to="past">
+                <NavItem href="#">Past Productions</NavItem>
+              </LinkContainer>
+              <LinkContainer to="future">
+                <NavItem href="#">Future Projects</NavItem>
+              </LinkContainer>
+              <LinkContainer to="members">
+                <NavItem href="#">Founding Members</NavItem>
               </LinkContainer>
             </Nav>
           </Navbar>
@@ -79,10 +106,16 @@ ReactDOM.render(
   <Provider store={configureStore()}>
     <Router history={browserHistory}>
       <Route path='/' component={AppContainer}>
-        <Route path='home' component={Home} />
-        <Route path='title' component={Title} />
-        <Route path='about' component={About} />
-        <Route path='parallax' component={ParallaxApp}/>
+        <Route path='mission' component={MissionContainer} />
+        <Route path='intro' component={IntroContainer} />
+        <Route path='review' component={ReviewContainer} />
+        <Route path='nextstep' component={NextstepContainer}/>
+        <Route path='initiatives' component={InitiativesContainer}/>
+        <Route path='thoughtmap' component={ThoughtmapContainer} />
+        <Route path='necessities' component={NecessitiesContainer}/>
+        <Route path='past' component={PastContainer}/>
+        <Route path='future' component={FutureContainer}/>
+        <Route path='members' component={MembersContainer}/>
       </Route>
     </Router>
   </Provider>,

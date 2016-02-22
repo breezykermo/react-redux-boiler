@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = (props) => {
+const Future = (props) => {
   return (
     <div>
-      About
+      Future
     </div>
   );
 };
 
-export default About;
+export default Future;
