@@ -1,4 +1,6 @@
-require("../node_modules/bootstrap/dist/css/bootstrap.min.css")
+require("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+require('./bootstrap-modified.css');
+
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Map} from 'immutable';
@@ -11,7 +13,6 @@ import {Provider} from 'react-redux';
 import {configureStore} from './redux/store';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as serverActions from './redux/reducers/server';
 
 //components
 import MissionContainer from './containers/Mission';
@@ -27,18 +28,19 @@ import MembersContainer from './containers/Members';
 
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import Parallax from 'react-parallax';
 
 /* create container as stateless function to indicate pure component */
 export class App extends Component {
   render() {
     return (
       <div>
-          <Navbar>
+          <Navbar style={{fontFamily: 'monospace'}}>
             <Navbar.Header>
               <Navbar.Brand>
                 <LinkContainer to="/home">
-                  <a href='#'>Grind Arts</a>
+                  <a href='#'>
+                    <img src="assets/brand.png" alt="Grind Arts." width='25px' height='25px'/>
+                  </a>
                 </LinkContainer>
               </Navbar.Brand>
             </Navbar.Header>
@@ -88,7 +90,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const actions = [serverActions];
+  const actions = [];
   const creators = Map()
     .merge(...actions)
     .filter(value => typeof value === 'function')

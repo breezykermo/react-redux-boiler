@@ -2,7 +2,7 @@ import React from 'react';
 
 const Mission = (props) => {
   return (
-    <div>
+    <div className='container'>
       Mission
     </div>
   );
