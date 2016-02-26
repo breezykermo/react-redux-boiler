@@ -16,10 +16,18 @@ const GrindWheel = (props) => {
       msTransform: 'rotate('+props.cssRotate+'deg)',
       transform: 'rotate('+props.cssRotate+'deg)',
     },
+    title: {
+      width: '100%',
+      textAlign: 'center',
+      position: 'fixed',
+      bottom: '75px',
+      transition: 'opacity .25s ease-in-out',
+    }
   };
 
   return (
     <div>
+      <h3 style={styles.title}>{props.titles[props.currentTitleIndex]}</h3>
       <img style={styles.rotated} src="assets/grind-orange.png" alt=""/>
     </div>
   );

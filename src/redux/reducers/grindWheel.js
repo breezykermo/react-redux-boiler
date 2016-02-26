@@ -9,6 +9,13 @@
 
 const initialState = {
   cssRotate: 40,
+  titles: [
+    'intro',
+    'review',
+    'next steps',
+    'initiatives',
+  ],
+  currentTitleIndex: 0,
 }
 
 export const ROTATE_GRIND_WHEEL = 'grindWheel/ROTATE_GRIND_WHEEL';
@@ -19,6 +26,14 @@ export const rotateGrindWheel = (degrees) => {
   });
 };
 
+export const ADVANCE_TITLE = 'grindWheel/ADVANCE_TITLE';
+export const advanceTitle = (units) => {
+  return({
+    type: ADVANCE_TITLE,
+    units,
+  });
+};
+
 export const grindWheel = (state = initialState, action) => {
   switch (action.type) {
 
@@ -26,6 +41,12 @@ export const grindWheel = (state = initialState, action) => {
       return {
         ...state,
         cssRotate: state.cssRotate + action.degrees,
+      };
+
+    case ADVANCE_TITLE:
+      return {
+        ...state,
+        currentTitleIndex: state.currentTitleIndex + action.units,
       };
 
     default:

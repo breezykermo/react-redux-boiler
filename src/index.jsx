@@ -46,10 +46,12 @@ const styles = {
 export class App extends Component {
   leftArrow() {
     this.props.actions.rotateGrindWheel(-20);
+    this.props.actions.advanceTitle(-1);
   }
 
   rightArrow() {
     this.props.actions.rotateGrindWheel(20);
+        this.props.actions.advanceTitle(1);
   }
 
   render() {
@@ -104,7 +106,7 @@ export class App extends Component {
             : this.props.children}
           </div>
           <Arrows onLeft={this.leftArrow.bind(this)} onRight={this.rightArrow.bind(this)} />
-          <GrindWheel cssRotate={this.props.grindWheel.cssRotate} />
+          <GrindWheel {...this.props.grindWheel} />
       </div>
     );
   }
