@@ -30,23 +30,10 @@ import PastContainer from './containers/Past';
 import FutureContainer from './containers/Future';
 import MembersContainer from './containers/Members';
 
-import { LinkContainer } from 'react-router-bootstrap';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
-
+import Brand from './components/Brand';
 import CogAnimation from './components/CogAnimation';
 import GrindWheel from './components/GrindWheel';
 import Arrows from './components/Arrows';
-
-const styles = {
-  logo: {
-    position: 'fixed',
-    top: '0px',
-    marginTop: '-50px',
-    height: '100px',
-    left: '100px',
-
-  },
-};
 
 /* create container as stateless function to indicate pure component */
 export class App extends Component {
@@ -74,11 +61,7 @@ export class App extends Component {
   render() {
     return (
       <div>
-         <LinkContainer to="/">
-           <a>
-             <img style={styles.logo} src="assets/grind-fade.png" alt="Grind Arts." width='auto' height='45px'/>
-           </a>
-         </LinkContainer>
+          <Brand />
           <div className="container">
             {this.props.routing.location.pathname === '/'
             ? <CogAnimation />

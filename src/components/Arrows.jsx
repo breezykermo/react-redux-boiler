@@ -33,12 +33,12 @@ const Arrows = (props) => {
       <img key={1}
               style={[styles.arrow, styles.left]}
               onClick={props.onLeft}
-              src="assets/grind-right.png"
+              src="assets/grind-left.png"
               alt="left-arrow"/>
       <img key={2}
               style={[styles.arrow, styles.right]}
               onClick={props.onRight}
-              src="assets/grind-left.png"
+              src="assets/grind-right.png"
               alt="right-arrow"/>
     </div>
   );
