@@ -2,18 +2,15 @@ import React from 'react';
 
 const styles = {
   mission: {
-    fontFamily: 'monospace',
-    fontSize: 28,
   },
   paragraph: {
-    fontSize: 20,
   },
 }
 
 const Mission = (props) => {
   return (
     <div className='text-center'>
-      <h2 style={styles.mission}>Grind Arts Company helps audiences forge deeper connections with themselves
+      <h2>Grind Arts Company helps audiences forge deeper connections with themselves
       and others by encouraging an exchange between emerging and seasoned artists to
       produce ground-breaking theatrical experiences.</h2>
       <br/>

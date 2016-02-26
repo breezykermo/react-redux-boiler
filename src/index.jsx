@@ -1,5 +1,6 @@
 require("../node_modules/bootstrap/dist/css/bootstrap.min.css");
 require('./bootstrap-modified.css');
+require('./cog-loading.css');
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
@@ -29,6 +30,10 @@ import MembersContainer from './containers/Members';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
+import CogAnimation from './components/CogAnimation';
+import GrindWheel from './components/GrindWheel';
+import Arrows from './components/Arrows';
+
 /* create container as stateless function to indicate pure component */
 export class App extends Component {
   render() {
@@ -37,9 +42,9 @@ export class App extends Component {
           <Navbar style={{fontFamily: 'monospace'}}>
             <Navbar.Header>
               <Navbar.Brand>
-                <LinkContainer to="/home">
+                <LinkContainer to="/">
                   <a href='#'>
-                    <img src="assets/brand.png" alt="Grind Arts." width='25px' height='25px'/>
+                    <img src="assets/GrindLogo.jpg" alt="Grind Arts." width='auto' height='45px'/>
                   </a>
                 </LinkContainer>
               </Navbar.Brand>
@@ -78,8 +83,12 @@ export class App extends Component {
             </Nav>
           </Navbar>
           <div className="container">
-            {this.props.children}
+            {this.props.routing.location.pathname === '/'
+            ? <CogAnimation />
+            : this.props.children}
           </div>
+          <Arrows />
+          <GrindWheel />
       </div>
     );
   }
