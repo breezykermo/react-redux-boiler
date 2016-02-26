@@ -8,11 +8,25 @@
 ******** */
 
 const initialState = {
-  cssRotation: 0,
+  cssRotate: 40,
 }
 
-export const grindWheel = (state = {}, action) => {
+export const ROTATE_GRIND_WHEEL = 'grindWheel/ROTATE_GRIND_WHEEL';
+export const rotateGrindWheel = (degrees) => {
+  return({
+    type: ROTATE_GRIND_WHEEL,
+    degrees,
+  });
+};
+
+export const grindWheel = (state = initialState, action) => {
   switch (action.type) {
+
+    case ROTATE_GRIND_WHEEL:
+      return {
+        ...state,
+        cssRotate: state.cssRotate + action.degrees,
+      };
 
     default:
       return state;

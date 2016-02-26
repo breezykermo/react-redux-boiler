@@ -15,6 +15,8 @@ import {configureStore} from './redux/store';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import * as grindWheelActions from './redux/reducers/grindWheel';
+
 //components
 import MissionContainer from './containers/Mission';
 import IntroContainer from './containers/Intro';
@@ -36,6 +38,14 @@ import Arrows from './components/Arrows';
 
 /* create container as stateless function to indicate pure component */
 export class App extends Component {
+  leftArrow() {
+    this.props.actions.rotateGrindWheel(-20);
+  }
+
+  rightArrow() {
+    this.props.actions.rotateGrindWheel(20);
+  }
+
   render() {
     return (
       <div>
@@ -87,8 +97,8 @@ export class App extends Component {
             ? <CogAnimation />
             : this.props.children}
           </div>
-          <Arrows />
-          <GrindWheel />
+          <Arrows onLeft={this.leftArrow.bind(this)} onRight={this.rightArrow.bind(this)} />
+          <GrindWheel cssRotate={this.props.grindWheel.cssRotate} />
       </div>
     );
   }
@@ -101,7 +111,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const actions = [];
+  const actions = [grindWheelActions];
   const creators = Map()
     .merge(...actions)
     .filter(value => typeof value === 'function')

@@ -1,3 +1,10 @@
+/* ********
+  AUTHOR: breezykermo
+  DATE: 26 February 2016 (Friday)
+  DESCRIPTION: arrows for moving through application
+  NOTES:
+
+******** */
 import React from 'react';
 import Radium from 'radium';
 
@@ -23,8 +30,16 @@ const Arrows = (props) => {
   // NB: Radium requires keys for all elements
   return (
     <div>
-      <img key={1} style={[styles.arrow, styles.left]} src="assets/grind.png" alt="left-arrow"/>
-      <img key={2} style={[styles.arrow, styles.right]} src="assets/grind.png" alt="right-arrow"/>
+      <img key={1}
+              style={[styles.arrow, styles.left]}
+              onClick={props.onLeft}
+              src="assets/grind.png"
+              alt="left-arrow"/>
+      <img key={2}
+              style={[styles.arrow, styles.right]}
+              onClick={props.onRight}
+              src="assets/grind.png"
+              alt="right-arrow"/>
     </div>
   );
 };
