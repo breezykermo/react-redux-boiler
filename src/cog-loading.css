@@ -3,10 +3,10 @@
 /* Variables */
 /* Mixins */
 body {
-  height: 100vh;
+/*  height: 100vh;
   font-family: "Montserrat", sans-serif;
   text-align: center;
-  overflow: hidden;
+  overflow: hidden;*/
 }
 .cogsh1 {
   font-family: 'Nova Mono';

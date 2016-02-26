@@ -35,6 +35,12 @@ import CogAnimation from './components/CogAnimation';
 import GrindWheel from './components/GrindWheel';
 import Arrows from './components/Arrows';
 
+const styles = {
+  content: {
+    overflow: 'hidden',
+  },
+}
+
 /* create container as stateless function to indicate pure component */
 export class App extends Component {
   leftArrow() {
@@ -65,7 +71,7 @@ export class App extends Component {
           <div className="container">
             {this.props.routing.location.pathname === '/'
             ? <CogAnimation />
-            : this.props.children}
+            : <div style={styles.content}>{this.props.children} </div>}
           </div>
           <Arrows onLeft={this.leftArrow.bind(this)} onRight={this.rightArrow.bind(this)} />
           <GrindWheel {...this.props.grindWheel} />
