@@ -20,7 +20,7 @@ const GrindWheel = (props) => {
 
   return (
     <div>
-      <img style={styles.rotated} src="assets/grind.png" alt=""/>
+      <img style={styles.rotated} src="assets/grind-orange.png" alt=""/>
     </div>
   );
 };

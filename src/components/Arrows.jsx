@@ -12,7 +12,7 @@ const styles = {
   arrow: {
     position: 'fixed',
     height: '100px',
-    marginTop: '-50px',
+    marginTop: '-100px',
     top: '50%',
     ':hover': {
       cursor: 'pointer',
@@ -33,12 +33,12 @@ const Arrows = (props) => {
       <img key={1}
               style={[styles.arrow, styles.left]}
               onClick={props.onLeft}
-              src="assets/grind.png"
+              src="assets/grind-left.png"
               alt="left-arrow"/>
       <img key={2}
               style={[styles.arrow, styles.right]}
               onClick={props.onRight}
-              src="assets/grind.png"
+              src="assets/grind-right.png"
               alt="right-arrow"/>
     </div>
   );

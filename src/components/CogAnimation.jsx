@@ -43,8 +43,6 @@ const CogAnimation = (props) => {
         <h1 className='cogsh1'>Grind Arts Co.</h1>
         <h2 className='cogsh2'>theatre. at. its. limits.</h2>
       </div>
-
-      <p style={styles.bottomDiv}> NB: example animation, just click on the tabs above 4 now.</p>
     </div>
   );
 };

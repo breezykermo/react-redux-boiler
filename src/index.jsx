@@ -36,6 +36,12 @@ import CogAnimation from './components/CogAnimation';
 import GrindWheel from './components/GrindWheel';
 import Arrows from './components/Arrows';
 
+const styles = {
+  logo: {
+    marginTop: '-10px',
+  },
+};
+
 /* create container as stateless function to indicate pure component */
 export class App extends Component {
   leftArrow() {
@@ -54,7 +60,7 @@ export class App extends Component {
               <Navbar.Brand>
                 <LinkContainer to="/">
                   <a href='#'>
-                    <img src="assets/GrindLogo.jpg" alt="Grind Arts." width='auto' height='45px'/>
+                    <img style={styles.logo} src="assets/grind-fade.png" alt="Grind Arts." width='auto' height='45px'/>
                   </a>
                 </LinkContainer>
               </Navbar.Brand>
