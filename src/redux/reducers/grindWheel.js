@@ -6,14 +6,21 @@
     using redux ducks; https://github.com/erikras/ducks-modular-redux
 
 ******** */
-
+// NB: routing relies on these strings
 const initialState = {
   cssRotate: 40,
   titles: [
+    '',
+    'mission',
     'intro',
     'review',
-    'next steps',
+    'nextstep',
     'initiatives',
+    'thoughtmap',
+    'necessities',
+    'past',
+    'future',
+    'members',
   ],
   currentTitleIndex: 0,
 }
