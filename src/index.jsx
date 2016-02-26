@@ -39,74 +39,46 @@ import Arrows from './components/Arrows';
 
 const styles = {
   logo: {
-    marginTop: '-10px',
+    position: 'fixed',
+    top: '0px',
+    marginTop: '-50px',
+    height: '100px',
+    left: '100px',
+
   },
 };
-
-// OUTDATED NAV
-  // <Navbar style={{fontFamily: 'monospace'}}>
-  //   <Navbar.Header>
-  //     <Navbar.Brand>
-  //       <LinkContainer to="/">
-  //         <a href='#'>
-  //           <img style={styles.logo} src="assets/grind-fade.png" alt="Grind Arts." width='auto' height='45px'/>
-  //         </a>
-  //       </LinkContainer>
-  //     </Navbar.Brand>
-  //   </Navbar.Header>
-  //   <Nav bsStyle="tabs">
-  //     <LinkContainer to="mission">
-  //       <NavItem href="#">Mission</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="intro">
-  //       <NavItem href="#">Intro</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="review">
-  //       <NavItem href="#">Review</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="nextstep">
-  //       <NavItem href="#">Next steps</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="initiatives">
-  //       <NavItem href="#">Initiatives</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="thoughtmap">
-  //       <NavItem href="#">Thoughtmap</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="necessities">
-  //       <NavItem href="#">Necessities</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="past">
-  //       <NavItem href="#">Past Productions</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="future">
-  //       <NavItem href="#">Future Projects</NavItem>
-  //     </LinkContainer>
-  //     <LinkContainer to="members">
-  //       <NavItem href="#">Founding Members</NavItem>
-  //     </LinkContainer>
-  //   </Nav>
-  // </Navbar>
 
 /* create container as stateless function to indicate pure component */
 export class App extends Component {
   leftArrow() {
-    this.props.actions.rotateGrindWheel(-20);
-    this.props.actions.advanceTitle(-1);
-    // routing
-    this.props.dispatch(push(this.props.grindWheel.titles[this.props.grindWheel.currentTitleIndex - 1]));
+    if (this.props.grindWheel.currentTitleIndex > 0) {
+      this.props.actions.rotateGrindWheel(-20);
+      this.props.actions.advanceTitle(-1);
+      // routing
+      this.props.dispatch(push(this.props.grindWheel.titles[this.props.grindWheel.currentTitleIndex - 1]));
+    }
   }
 
   rightArrow() {
-    this.props.actions.rotateGrindWheel(20);
-    this.props.actions.advanceTitle(1);
-    // routing
-    this.props.dispatch(push(this.props.grindWheel.titles[this.props.grindWheel.currentTitleIndex + 1]));
+    console.log(this.props.grindWheel.titles.length)
+    console.log(this.props.grindWheel.currentTitleIndex)
+    // nb: -1 for the empty route at the beginning.
+    if (this.props.grindWheel.currentTitleIndex < (this.props.grindWheel.titles.length - 1)) {
+      this.props.actions.rotateGrindWheel(20);
+      this.props.actions.advanceTitle(1);
+      // routing
+      this.props.dispatch(push(this.props.grindWheel.titles[this.props.grindWheel.currentTitleIndex + 1]));
+    }
   }
 
   render() {
     return (
       <div>
+         <LinkContainer to="/">
+           <a>
+             <img style={styles.logo} src="assets/grind-fade.png" alt="Grind Arts." width='auto' height='45px'/>
+           </a>
+         </LinkContainer>
           <div className="container">
             {this.props.routing.location.pathname === '/'
             ? <CogAnimation />
