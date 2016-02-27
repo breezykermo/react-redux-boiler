@@ -37,7 +37,7 @@ import Arrows from './components/Arrows';
 
 const styles = {
   content: {
-    overflow: 'hidden',
+    marginTop: '-30px',
   },
 }
 
