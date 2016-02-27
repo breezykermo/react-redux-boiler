@@ -13,19 +13,29 @@ const Mission = (props) => {
   return (
     <div className='row' style={styles.centered}>
       <div className="col-lg-5">
-        <h2>Grind Arts Company helps audiences forge deeper connections with themselves
-        and others by encouraging an exchange between emerging and seasoned artists to
-        produce ground-breaking theatrical experiences.</h2>
+        <h4>Grind Arts Company is a Princeton-bred theater company dedicated to contemporizing the
+        way audiences interact with theater. Under the Grind umbrella, extraordinary talents in theater,
+        film, dance, and music collaborate to create bold, unique theatrical experiences that prove
+        theater’s boundless nature. The work ranges from devised, multi-medium theater projects, to
+        reimagined revivals, to innovative films that blur the line between theater and video. </h4>
         <br/>
         <hr/>
         <br/>
       </div>
-      <div className="col-lg-5 col-lg-offset-1">
+      <div className="col-lg-6">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <hr />
         <br />
-        <Video title='theatre. at. its. limits.' url='https://www.youtube.com/embed/Dch9zECruN0' />
+        <h5>Through its unique structure, Grind Arts Company will empower emerging artists to
+        break convention and advance the art of storytelling, providing audiences with
+        unforgettable experiences that stimulate connection, introspection, and inspiration. </h5>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const GrindWheel = (props) => {
 
   return (
     <div>
-      <h3 style={styles.title}>{props.titles[props.currentTitleIndex]}</h3>
+      <h3 style={styles.title}>{props.labels[props.currentTitleIndex]}</h3>
       <img style={styles.rotated} src="assets/grind-orange.png" alt=""/>
     </div>
   );

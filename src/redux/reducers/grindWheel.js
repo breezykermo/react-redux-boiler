@@ -6,21 +6,30 @@
     using redux ducks; https://github.com/erikras/ducks-modular-redux
 
 ******** */
-// NB: routing relies on these strings
+// NB: routing relies on titles, labels in labels
 const initialState = {
   cssRotate: 40,
   titles: [
     '',
     'mission',
     'intro',
-    'review',
     'nextstep',
     'initiatives',
-    'thoughtmap',
     'necessities',
     'past',
     'future',
     'members',
+  ],
+  labels: [
+    '',
+    'THE MISSION',
+    'THE START',
+    'LOOKING FORWARD',
+    'GRIND INITIATIVES',
+    'THE NEED',
+    'PREVIOUS PRODUCTIONS',
+    'FUTURE PROJECTS',
+    'FOUNDING MEMBERS',
   ],
   currentTitleIndex: 0,
 }
