@@ -1,9 +1,58 @@
 import React from 'react';
+import Coverflow from 'react-coverflow';
+
+const styles = {
+  container: {
+    paddingTop: '44px',
+  },
+};
+
+const images = [
+  {
+    src: 'assets/graham.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Sweeney Todd',
+  },
+  {
+    src: 'assets/HERO.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'HERO - An Aerial Spectacular',
+  },
+  {
+    src: 'assets/L5Y.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Last Five Years',
+  },
+  {
+    src: 'assets/graham2.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Macbeth',
+  },
+  {
+    src: 'assets/graham3.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Color + Light',
+  },
+];
 
 const Past = (props) => {
   return (
-    <div>
-      <h2>Sweeney Todd: The Demon Barber of Fleet Street</h2>
+    <div style={styles.container}>
+      <hr/>
+      <Coverflow
+        width={960}
+        height={480}
+        displayQuantityOfSide={2}
+        navigation={false}
+        enableHeading={true}>
+        {images.map((i, k) => <img src={i.src} key={k} url={i.url} alt={i.alt} width='auto' height={300} />)}
+      </Coverflow>
+      <hr/>
+    </div>
+  );
+};
+
+/*<h2>Sweeney Todd: The Demon Barber of Fleet Street</h2>
       <p>Grind Arts Company invigorated the Princeton University theater scene with their inaugural
       production of Sweeney Todd, which took place in the Jadwin Gym loading dock: an outdoor
       recycling plant on the outskirts of campus. Hoards of students endured the elements to see this
@@ -45,9 +94,6 @@ const Past = (props) => {
       human connection with the painting that draws him away from his girlfriend Dot who, in this telling, is a ballet
       dancer lacking the fetishized ballet body. See the film on
       <a href='http://www.playbill.com/news/article/pigments-come-to-life-in-a-film-ballet-set-to-sondheims-color-and-light-383855'>
-        Playbill</a>.</p>
-    </div>
-  );
-};
+        Playbill</a>.</p>*/
 
 export default Past;

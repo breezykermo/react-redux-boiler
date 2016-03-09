@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import { grindWheel } from './grindWheel';
-import { routeReducer } from 'react-router-redux';
+import { members } from './members';
+import { routerReducer } from 'react-router-redux';
 
 export const reducer = combineReducers({
-  routing: routeReducer,
+  routing: routerReducer,
   grindWheel,
+  members,
 });

@@ -2,25 +2,24 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import multi from 'redux-multi';
 import { reducer } from './reducers/reducer';
-import { browserHistory } from 'react-router';
-import { syncHistory } from 'react-router-redux';
+import { routerMiddleware } from 'react-router-redux';
 
-const reduxRouterMiddleware = syncHistory(browserHistory);
+export function configureStore(history, initialState) {
 
-const createFinalStore = compose(
-  applyMiddleware(thunk, multi, reduxRouterMiddleware),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
-)(createStore);
+  const routingMiddleware = routerMiddleware(history)
 
-export function configureStore(initialState) {
-  const store = createFinalStore(reducer, initialState);
-
-  // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
-  if (module.hot) {
-    module.hot.accept('../reducers', () =>
-      store.replaceReducer(require('../reducers')) /* default if you use Babel 6+ */
-    );
+  // necessary for when loading from server (no dev tools, as no window)
+  let devTools = f => f;
+  if (false) {
+    devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
   }
+
+  const createFinalStore = compose(
+    applyMiddleware(thunk, multi, routingMiddleware),
+    devTools
+  )(createStore);
+
+  const store = createFinalStore(reducer, initialState);
 
   return store;
 }

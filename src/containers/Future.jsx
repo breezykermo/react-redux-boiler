@@ -1,8 +1,65 @@
 import React from 'react';
+import Coverflow from 'react-coverflow';
+
+const styles = {
+  container: {
+    paddingTop: '44px',
+  },
+};
+
+const images = [
+  {
+    src: 'assets/eamon.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Cult Project - A New Devised Work',
+  },
+  {
+    src: 'assets/eamon.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Little Shop of Horrors',
+  },
+  {
+    src: 'assets/eamon.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Light in the Piazza',
+  },
+  {
+    src: 'assets/eamon.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Lulu',
+  },
+  {
+    src: 'assets/eamon.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Falling',
+  },
+  {
+    src: 'assets/eamon.jpg',
+    url: 'http://www.lachlankermode.com',
+    alt: 'Oh Sean - A Short Film',
+  },
+];
 
 const Future = (props) => {
   return (
-    <div>
+    <div style={styles.container}>
+      <hr/>
+      <Coverflow
+        width={960}
+        height={480}
+        displayQuantityOfSide={2}
+        navigation={false}
+        enableHeading={true}>
+        {images.map((i, k) => <img src={i.src} key={k} url={i.url} alt={i.alt} />)}
+      </Coverflow>
+      <hr/>
+    </div>
+  );
+};
+
+export default Future;
+
+/* <div>
       <h2>Cult Project – A New Devised Work</h2>
       <p>Director Michael Arden (Spring Awakening Revival) and Eamon Foley have recently been collaborating
       on a devised piece of immersive dinner theater that explores the culture surrounding cults of the late 60’s and
@@ -46,8 +103,4 @@ const Future = (props) => {
       romantic demons of his past. The dance will move through the entire 54 Below space from the stage and table seating area,
       to the bar, up the stairs, and eventually to the street culminating in some sort of deeper understanding of what the relationship
       was for person and why we cling to love so desperately.</p>
-    </div>
-  );
-};
-
-export default Future;
+    </div> */

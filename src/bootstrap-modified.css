@@ -1,8 +1,16 @@
 @media (min-width: 1200px) {
   .container {
     margin-top: 5em;
+    margin-bottom: 200px;
   }
 }
+
+/*@media (min-width: 100px) {
+  .container {
+    margin: 2em;
+    margin-bottom: 200px;
+  }
+}*/
 
 .nav>li>a {
   padding-right: 10px;

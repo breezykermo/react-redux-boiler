@@ -11,9 +11,9 @@ const styles = {
   intro: {
     textAlign: 'center',
   },
-  panel: {
-    height: '250px',
-  },
+  // panel: {
+  //   height: '250px',
+  // },
 };
 
 const sliderSettings = {
